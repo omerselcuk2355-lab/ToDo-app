@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* CONTAINER */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 32px;
+    width: 100%;
+    max-width: 600px;
+    height: fit-content;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* BAŞLIK */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 28px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* GÖREV EKLEME */
+.add-task {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    color: #eee;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s, background 0.2s;
+}
+
+.add-task input:focus {
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.add-task button {
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-task button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+/* ARAMA */
+.search {
+    margin-bottom: 24px;
+}
+
+.search input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    color: #eee;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s, background 0.2s;
+}
+
+.search input:focus {
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* SAYAÇ */
+.counter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* GÖREV LİSTESİ */
+#taskList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* GÖREV ITEM */
+.task-item {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.task-item:hover {
+    background: rgba(255, 255, 255, 0.11);
+    transform: translateX(4px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* TAMAMLANDI - YEŞİL CAM */
+.task-item.completed {
+    background: rgba(0, 230, 118, 0.1);
+    border-color: rgba(0, 230, 118, 0.3);
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.1);
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.task-text {
+    font-size: 15px;
+    flex: 1;
+}
+
+/* BUTONLAR */
+.task-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.task-buttons button {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.task-buttons button:hover {
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-1px);
+}
+
+/* DROPDOWN */
+.status-select {
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+    outline: none;
+    backdrop-filter: blur(10px);
+    transition: all 0.2s;
+}
+
+.status-todo {
+    background: rgba(255,255,255,0.1);
+    color: #ccc;
+}
+
+.status-inprogress {
+    background: rgba(255, 170, 0, 0.15);
+    color: #ffaa00;
+    border-color: rgba(255,170,0,0.3);
+}
+
+.status-complete {
+    background: rgba(0, 230, 118, 0.15);
+    color: #00e676;
+    border-color: rgba(0,230,118,0.3);
+}
+
+
+.empty {
+    text-align: center;
+    opacity: 0.5;
+    padding: 20px;
+    font-size: 14px;
+}
+/* TOAST ekrana kısasüreli çıkan popupkar */
+#toastContainer {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+
+.toast {
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.4s ease;
+    min-width: 220px;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* YEŞİL - başarı */
+.toast-success {
+    background: rgba(0, 230, 118, 0.15);
+    border-color: rgba(0, 230, 118, 0.35);
+    color: #00e676;
+}
+
+/* KIRMIZI - hata */
+.toast-error {
+    background: rgba(255, 60, 60, 0.15);
+    border-color: rgba(255, 60, 60, 0.35);
+    color: #ff5252;
+}
+
+/* SARI - uyarı */
+.toast-warning {
+    background: rgba(255, 170, 0, 0.15);
+    border-color: rgba(255, 170, 0, 0.35);
+    color: #ffaa00;
+}
+/* INLINE EDIT */
+.inline-edit-input {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    color: #eee;
+    font-size: 15px;
+    padding: 4px 10px;
+    outline: none;
+    flex: 1;
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Uygulamam</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="toastContainer"></div>
+    <div class="container">
+        <h1>Görev Listesi</h1>
+
+        <!-- Görev Ekleme -->
+        <div class="add-task">
+            <input type="text" id="taskInput" placeholder="Yeni görev ekle...">
+            <button id="addBtn">Ekle</button>
+        </div>
+
+        <!-- Arama -->
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="🔍 Görev ara...">
+        </div>
+
+        <div class="counter">
+            <span id="totalCount">Toplam: 0</span>
+            <span id="completedCount">Tamamlanan: 0</span>
+        </div>
+
+        <!-- Liste -->
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/controller.js"></script>
+
+</body>
+</html>
